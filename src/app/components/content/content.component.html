@@ -1,0 +1,13 @@
+<div class="space-y-8">
+    <app-carousel></app-carousel>
+    <div class="max-w-screen-md mx-auto">
+        <h2 class="text-[28px] text-center capitalize font-medium mb-[62px]">
+            Dokumen yang harus kamu siapkan
+        </h2>
+        <div class="grid grid-cols-3 gap-6">
+            <div *ngFor="let data of documents">
+                <app-card [document]="data"></app-card>
+            </div>
+        </div>
+    </div>
+</div>
