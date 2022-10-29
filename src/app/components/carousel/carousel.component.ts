@@ -31,14 +31,20 @@ export class CarouselComponent implements OnInit {
 
   images: any;
 
+  isLoading: any = true;
+
   constructor(private dataProvider: DataProvider) { }
 
-  ngOnInit(): void {
-
+  getDataImages = () => {
     this.dataProvider.getImages('/banners')
       .then(result => {
         this.images = result;
+        this.isLoading = false;
       })
-
   }
+
+  ngOnInit(): void {
+    this.getDataImages()
+  }
+
 }
